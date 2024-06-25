@@ -121,29 +121,29 @@
 
     
         const trigger = document.getElementById('trigger');
-        const texts = document.querySelectorAll('.tap-income');
+        const texts = document.querySelectorAll('.text');
 
         trigger.addEventListener('click', (event) => {
             const containerRect = trigger.getBoundingClientRect();
             const clickX = event.clientX - containerRect.left;
             const clickY = event.clientY - containerRect.top;
 
-            tap-income.forEach(text => {
-                const startX = Math.random() * (containerRect.width - tap-income.offsetWidth);
-                const startY = Math.random() * (containerRect.height - tap-income.offsetHeight);
+            text.forEach(text => {
+                const startX = Math.random() * (containerRect.width - text.offsetWidth);
+                const startY = Math.random() * (containerRect.height - text.offsetHeight);
 
-                tap-income.style.transform = `translate(${startX}px, ${startY}px)`;
-                tap-income.classList.add('show');
+                text.style.transform = `translate(${startX}px, ${startY}px)`;
+                text.classList.add('show');
 
                 setTimeout(() => {
-                    tap-income.style.transition = 'transform 1s';
-                    tap-income.style.transform = `translate(${clickX - containerRect.width / 2}px, ${clickY - containerRect.height / 2}px)`;
+                    text.style.transition = 'transform 1s';
+                    text.style.transform = `translate(${clickX - containerRect.width / 2}px, ${clickY - containerRect.height / 2}px)`;
                 }, 100); // Добавляем короткую задержку перед началом движения
             });
 
             setTimeout(() => {
-                tap-income.forEach(text => {
-                    tap-income.classList.remove('show');
+                text.forEach(text => {
+                    text.classList.remove('show');
                 });
             }, 300); // Скрываем текст через 2 секунды после достижения точки клика
         });
