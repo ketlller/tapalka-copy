@@ -96,7 +96,8 @@
         </div>
         <div class="button">
             <div class="button__img">
-                <img src="img/hamster.jpg" alt="" id="trigger"">
+                <img src="img/hamster.jpg" alt="Image" id="trigger"">
+                <div class="text">Text 1</div>
             </div>
         </div>
         <div class="footer">
@@ -115,8 +116,8 @@
                 <div class="upgrade__button">Upgrade</div>
             </div>
         </div>
-        <img src="img/hamster.jpg" alt="Image" id="trigger">
-        <div class="text">Text 1</div>
+         
+        
     </div>
     <script src="script.js"></script>
     
@@ -161,7 +162,7 @@
             });
 
             setTimeout(() => {
-                text.forEach(text => {
+                texts.forEach(text => {
                     text.classList.remove('show');
                 });
             }, 300); // Скрываем текст через 2 секунды после достижения точки клика
