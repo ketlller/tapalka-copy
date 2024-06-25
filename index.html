@@ -6,6 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUCRUM CRYPTO</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стиль для контейнера изображения */
+        .image-container {
+            display: inline-block;
+        }
+
+        /* Стиль для анимации вращения */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Стиль для изображения */
+        .image-container img {
+            display: block;
+            transition: transform 0.2s;
+        }
+
+        /* Анимируем изображение */
+        .rotate {
+            animation: rotate 0.2s linear;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,6 +93,27 @@
         </div>
     </div>
     <script src="script.js"></script>
+
+    <div class="image-container">
+        <img src="http://i.imgur.com/3DWAbmN.jpg" alt="Image" width="200">
+    </div>
+
+    <script>
+        // Получаем изображение
+        const image = document.querySelector('.image-container img');
+
+        // Добавляем обработчик событий для клика
+        image.addEventListener('click', () => {
+            // Добавляем класс для анимации вращения
+            image.classList.add('rotate');
+
+            // Удаляем класс после завершения анимации для возможности повторного клика
+            image.addEventListener('animationend', () => {
+                image.classList.remove('rotate');
+            }, { once: true });
+        });
+    </script>
+    
 </body>
 
 </html>
