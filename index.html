@@ -141,29 +141,29 @@
 
     
         const trigger = document.getElementById('trigger');
-        const texts = document.querySelectorAll('.text');
+        const texts = document.querySelectorAll('.tap-income');
 
         trigger.addEventListener('click', (event) => {
             const containerRect = trigger.getBoundingClientRect();
             const clickX = event.clientX - containerRect.left;
             const clickY = event.clientY - containerRect.top;
 
-            text.forEach(text => {
-                const startX = Math.random() * (containerRect.width - text.offsetWidth);
-                const startY = Math.random() * (containerRect.height - text.offsetHeight);
+            texts.forEach(tap-income => {
+                const startX = Math.random() * (containerRect.width - tap-income.offsetWidth);
+                const startY = Math.random() * (containerRect.height - tap-income.offsetHeight);
 
-                text.style.transform = `translate(${startX}px, ${startY}px)`;
-                text.classList.add('show');
+                tap-income.style.transform = `translate(${startX}px, ${startY}px)`;
+                tap-income.classList.add('show');
 
                 setTimeout(() => {
-                    text.style.transition = 'transform 1s';
-                    text.style.transform = `translate(${clickX - containerRect.width / 2}px, ${clickY - containerRect.height / 2}px)`;
+                    tap-income.style.transition = 'transform 1s';
+                    tap-income.style.transform = `translate(${clickX - containerRect.width / 2}px, ${clickY - containerRect.height / 2}px)`;
                 }, 100); // Добавляем короткую задержку перед началом движения
             });
 
             setTimeout(() => {
-                texts.forEach(text => {
-                    text.classList.remove('show');
+                texts.forEach(tap-income => {
+                    tap-income.classList.remove('show');
                 });
             }, 300); // Скрываем текст через 2 секунды после достижения точки клика
         });
