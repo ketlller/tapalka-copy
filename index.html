@@ -28,10 +28,31 @@
             transition: transform 0.2s;
         }
 
-        /* Анимируем изображение */
+        /* Анимируем изображение скорость вращение в 360 град картинки*/
         .rotate {
-            animation: rotate 0.1s linear;
+            animation: rotate 0.3s linear;
         }
+
+
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+        .container img {
+            display: block;
+            width: 200px;
+            cursor: pointer;
+        }
+        .text {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s, transform 1s;
+            white-space: nowrap;
+        }
+        .show {
+            opacity: 1;
+        }
+        
     </style>
 </head>
 
