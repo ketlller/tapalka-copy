@@ -48,7 +48,15 @@
         }
 
 
- 
+        .user-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
 
         
@@ -65,6 +73,8 @@
 </head>
 
 <body>
+    <div class="user-info" id="userInfo"></div>
+    
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     
     <div class="container">
@@ -139,8 +149,8 @@
         Telegram.WebApp.ready();
 
         const user = Telegram.WebApp.initDataUnsafe.user;
-
-        const userInfo = document.createElement('div');
+        const userInfo = document.getElementById('userInfo');
+         
         userInfo.innerHTML = `
             <h3>User Information</h3>
             <p>Username: ${user.username}</p>
