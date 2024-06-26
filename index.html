@@ -63,7 +63,7 @@
 </head>
 
 <body>
-    
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     
     <div class="container">
         <div class="sections">
@@ -134,6 +134,22 @@
  
 
     <script>
+        Telegram.WebApp.ready();
+
+        const user = Telegram.WebApp.initDataUnsafe.user;
+
+        const userInfo = document.createElement('div');
+        userInfo.innerHTML = `
+            <h3>User Information</h3>
+            <p>Username: ${user.username}</p>
+            <p>First Name: ${user.first_name}</p>
+            <p>Last Name: ${user.last_name}</p>
+        `;
+
+        document.body.insertBefore(userInfo, document.getElementById('gameCanvas'));
+
+
+        
         // Получаем изображение
         const image = document.querySelector('.button__img img');
 
