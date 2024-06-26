@@ -47,7 +47,10 @@
         .button-container {
             margin-bottom: 20px;
         }
-
+        canvas {
+            border: 2px solid #000;
+            margin-top: 20px;
+        }
          
 
 
@@ -70,6 +73,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     
     <div class="user-info" id="userInfo"></div>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
     <div class="button-container">
         <button onclick="sendMessageToBot('Hello from Snake Game!')">Send Message to Bot</button>
     </div>
