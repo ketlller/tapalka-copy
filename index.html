@@ -154,7 +154,12 @@
            
         `;
 
-        
+        function sendMessageToBot(message) {
+            Telegram.Bot.sendMessage({
+                text: message,
+                chat_id: Telegram.WebApp.initData.chat.id
+            });
+        }
 
 
         
