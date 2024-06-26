@@ -64,9 +64,7 @@
       
     
     
-   <p class="hint">Some little hint</p> <!--Просто текст-подсказка для проверки-->
-   <button id="btn" class="button">Show/Hide Main Button</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
-   <button id="btnED" class="button">Enable/Disable Main Button</button> <!--Кнопка, чтобы сделать кнопку активной/неактивной-->
+   
     
     
 
@@ -166,33 +164,7 @@
         
 
     
-        const trigger = document.getElementById('trigger');
-        const texts = document.querySelectorAll('.text');
-
-        trigger.addEventListener('click', (event) => {
-            const containerRect = trigger.getBoundingClientRect();
-            const clickX = event.clientX - containerRect.left;
-            const clickY = event.clientY - containerRect.top;
-
-            texts.forEach(text => {
-                const startX = Math.random() * (containerRect.width - text.offsetWidth);
-                const startY = Math.random() * (containerRect.height - text.offsetHeight);
-
-                text.style.transform = `translate(${startX}px, ${startY}px)`;
-                text.classList.add('show');
-
-                setTimeout(() => {
-                    text.style.transition = 'transform 1s';
-                    text.style.transform = `translate(${clickX - containerRect.width / 2}px, ${clickY - containerRect.height / 2}px)`;
-                }, 100); // Добавляем короткую задержку перед началом движения
-            });
-
-            setTimeout(() => {
-                texts.forEach(text => {
-                    text.classList.remove('show');
-                });
-            }, 300); // Скрываем текст через 2 секунды после достижения точки клика
-        });
+        
 
 
 
