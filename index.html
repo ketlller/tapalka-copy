@@ -52,6 +52,20 @@
         .show {
             opacity: 1;
         }
+
+
+        .source-class {
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+
+        .target-class {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+
         
     </style>
 </head>
@@ -96,7 +110,7 @@
         </div>
         <div class="button">
             <div class="button__img">
-                <img src="img/hamster.jpg" alt="">
+                <img src="img/hamster.jpg" alt="" id="trigger>
                  
             </div>
         </div>
@@ -119,9 +133,9 @@
           
         
     </div>
-
+    
     <div class="containerm">
-        <img src="https://gyazo.com/92a8f48263dacbbd91628c4755ca9b0d.png" alt="" id="trigger">
+        
         <div class="text">Text 1</div>
         
     </div>
@@ -144,7 +158,22 @@
                 image.classList.remove('rotate');
             }, { once: true });
         });
-    
+
+
+
+        // Получаем элементы с нужными классами
+        const sourceElement = document.querySelector('.tap-income');
+        const targetElement = document.querySelector('.text');
+
+        // Получаем значение класса и присваиваем его другому элементу
+        const sourceClassValue = sourceElement.className;
+        targetElement.className = sourceClassValue;
+
+        // Опционально, удаляем исходный класс после передачи значения
+        sourceElement.classList.remove(sourceClassValue);
+
+
+        
 
     
         const trigger = document.getElementById('trigger');
@@ -174,6 +203,15 @@
                 });
             }, 300); // Скрываем текст через 2 секунды после достижения точки клика
         });
+
+
+
+
+        
+
+
+
+        
     </script>
 
     
