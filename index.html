@@ -30,7 +30,7 @@
 
         /* Анимируем изображение скорость вращение в 360 град картинки*/
         .rotate {
-            animation: rotate 0.3s linear;
+            animation: rotate 0.1s linear;
         }
 
 
@@ -152,7 +152,7 @@
     <script>
         document.getElementById('image').addEventListener('click', function(event) {
             var text = document.createElement('div');
-            text.className = 'text';
+            text.className = 'tap-income';
             text.textContent = document.querySelectorAll('.tap-income'); 
 
             document.body.appendChild(text);
