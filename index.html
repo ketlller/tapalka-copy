@@ -57,16 +57,7 @@
 
 <body>
     
-
-      
-    
-    
-   
-    
-    
-
-
-    
+    <div id="telegram-username"></div>
     <div class="container">
         <div class="sections">
             <div class="section">
@@ -134,26 +125,33 @@
     <script src="script.js"></script>
 
 
-    <div id="telegram-username"></div>
+     
 
     <script>
         // Замените 'YOUR_BOT_TOKEN' на реальный токен вашего бота
-        const botToken = '7325118516:AAFmmdvZXa8dKK-9xxewK1xG7vTlry-baho';
+const botToken = '7325118516:AAFmmdvZXa8dKK-9xxewK1xG7vTlry-baho';
 
-        // Функция для получения информации о боте
-        async function getBotInfo() {
-            try {
-                const response = await fetch(`https://api.telegram.org/bot${botToken}/getMe`);
-                const data = await response.json();
-                const username = data.result.username;
-                document.getElementById('telegram-username').innerText = `Мой юзернейм в Telegram: @${username}`;
-            } catch (error) {
-                console.error('Ошибка получения данных о боте:', error);
-            }
-        }
+// Функция для отправки запроса к Telegram API
+async function getBotInfo() {
+    try {
+        // Отправляем запрос на получение информации о боте
+        const response = await fetch(`https://api.telegram.org/bot${botToken}/getMe`);
+        const data = await response.json();
 
-        // Вызов функции при загрузке страницы
-        getBotInfo();
+        // Получаем юзернейм бота из ответа API
+        const username = data.result.username;
+
+        // Отображаем юзернейм на странице
+        document.getElementById('telegram-username').innerText = `Мой юзернейм в Telegram: @${username}`;
+    } catch (error) {
+        console.error('Ошибка при получении данных о боте:', error);
+        document.getElementById('telegram-username').innerText = 'Не удалось загрузить юзернейм';
+    }
+}
+
+// Вызываем функцию при загрузке страницы
+getBotInfo();
+
     </script>
 
     
