@@ -34,16 +34,21 @@
         }
 
 
-        .container {
+        .containerm {
             position: relative;
             display: inline-block;
         }
-        .container img {
+        .containerm img {
             display: block;
             width: 200px;
             cursor: pointer;
         }
-        
+        .text {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s, transform 1s;
+            white-space: nowrap;
+        }
         .show {
             opacity: 1;
         }
@@ -91,7 +96,7 @@
         </div>
         <div class="button">
             <div class="button__img">
-                <img src="img/hamster.jpg" alt="" id="trigger"">
+                <img src="img/hamster.jpg" alt="">
                  
             </div>
         </div>
@@ -111,9 +116,16 @@
                 <div class="upgrade__button">Upgrade</div>
             </div>
         </div>
-         
+          
         
     </div>
+
+    <div class="containerm">
+        <img src="https://gyazo.com/92a8f48263dacbbd91628c4755ca9b0d.png" alt="Image" id="trigger">
+        <div class="text">Text 1</div>
+        
+    </div>
+    
     <script src="script.js"></script>
     
     
@@ -136,29 +148,29 @@
 
     
         const trigger = document.getElementById('trigger');
-        const texts = document.querySelectorAll('.tap-income');
+        const texts = document.querySelectorAll('.text');
 
         trigger.addEventListener('click', (event) => {
             const containerRect = trigger.getBoundingClientRect();
             const clickX = event.clientX - containerRect.left;
             const clickY = event.clientY - containerRect.top;
 
-            texts.forEach(tap-income => {
-                const startX = Math.random() * (containerRect.width - tap-income.offsetWidth);
-                const startY = Math.random() * (containerRect.height - tap-income.offsetHeight);
+            texts.forEach(text => {
+                const startX = Math.random() * (containerRect.width - text.offsetWidth);
+                const startY = Math.random() * (containerRect.height - text.offsetHeight);
 
-                tap-income.style.transform = `translate(${startX}px, ${startY}px)`;
-                tap-income.classList.add('show');
+                text.style.transform = `translate(${startX}px, ${startY}px)`;
+                text.classList.add('show');
 
                 setTimeout(() => {
-                    tap-income.style.transition = 'transform 1s';
-                    tap-income.style.transform = `translate(${clickX - containerRect.width / 2}px, ${clickY - containerRect.height / 2}px)`;
+                    text.style.transition = 'transform 1s';
+                    text.style.transform = `translate(${clickX - containerRect.width / 2}px, ${clickY - containerRect.height / 2}px)`;
                 }, 100); // Добавляем короткую задержку перед началом движения
             });
 
             setTimeout(() => {
-                texts.forEach(tap-income => {
-                    tap-income.classList.remove('show');
+                texts.forEach(text => {
+                    text.classList.remove('show');
                 });
             }, 300); // Скрываем текст через 2 секунды после достижения точки клика
         });
