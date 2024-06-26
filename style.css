@@ -19,7 +19,11 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     user-select: none;
 }
-
+.user-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
 .sections {
     display: flex;
     justify-content: space-around;
