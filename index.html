@@ -43,10 +43,7 @@
             font-weight: bold; /* Жирный шрифт для лучшей видимости */
             color: white; /* Цвет шрифта */
         }
-        canvas {
-            border: 2px solid #000;
-            margin-top: 20px;
-        }
+         
 
 
         .user-info {
@@ -150,9 +147,9 @@
         Telegram.WebApp.ready();
 
         const user = Telegram.WebApp.initDataUnsafe.user;
-        const userInfo = document.getElementById('userInfo');
+        const userInfoDiv = document.getElementById('userInfo');
          
-        userInfo.innerHTML = `
+        userInfoDiv.innerHTML = `
             <h3>User Information</h3>
             <p>Username: ${user.username}</p>
             <p>First Name: ${user.first_name}</p>
