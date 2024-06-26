@@ -35,7 +35,11 @@
 
 
         
-        
+        .text {
+        position: absolute;
+        transition: transform 0.5s ease-in-out, opacity 1s ease-in-out;
+        opacity: 1;
+        }
         
 
 
@@ -97,7 +101,7 @@
         </div>
         <div class="button">
             <div class="button__img">
-                <img src="img/hamster.jpg" alt="">
+                <img src="img/hamster.jpg" alt="" style="cursor: pointer;">
             </div>
         </div>
         <div class="footer">
@@ -145,7 +149,36 @@
         
     </script>
     
-    
+    <script>
+    document.getElementById('image').addEventListener('click', function(event) {
+        var text = document.createElement('div');
+        text.className = 'text';
+        text.textContent = 'Текст для перемещения';
+
+        document.body.appendChild(text);
+
+        var x = event.clientX;
+        var y = event.clientY;
+
+        // Вычисляем случайное направление
+        var dx = Math.random() * 10 - 111; // случайное значение от -100 до 100 для x
+        var dy = Math.random() * 10 - 111; // случайное значение от -100 до 100 для y
+
+        // Перемещаем текст к точке клика
+        text.style.transform = `translate(${y}px, ${x}px)`;
+
+        // Устанавливаем случайное направление исчезновения
+        setTimeout(function() {
+            text.style.transform = `translate(${x + dx}px, ${y + dy}px)`;
+            text.style.opacity = 0;
+        }, 0); // начинаем движение через 50 мс
+
+        // Удаляем текст после завершения анимации исчезновения
+        setTimeout(function() {
+            text.remove();
+        }, 450); // удаляем через 1 секунду
+    });
+</script>
     
 </body>
 
