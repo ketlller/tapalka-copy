@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUCRUM CRYPTO</title>
-
+     
     <link rel="stylesheet" href="style.css">
     <style>
         /* Стиль для контейнера изображения */
@@ -34,58 +34,46 @@
             animation: rotate 0.3s linear;
         }
 
+
+        
         .text {
             position: absolute;
             transition: transform 0.2s ease-in-out, opacity 3s ease-in-out;
             opacity: 1;
-            font-size: 36px;
-            font-weight: bold;
-            color: white;
+            font-size: 36px; /* Устанавливаем размер шрифта */
+            font-weight: bold; /* Жирный шрифт для лучшей видимости */
+            color: white; /* Цвет шрифта */
         }
+         
+         
+         
+          
 
-        /* Стиль для нижнего ряда кнопок */
-        .nav-bar {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #333;
-            padding: 10px 0;
-            z-index: 1000; /* Увеличен z-index чтобы кнопки находились над содержимым */
-        }
 
-        .nav-bar .nav-button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-        }
+        
+        
 
-        .nav-bar .nav-button img {
-            width: 30px;
-            height: 30px;
-            margin-bottom: 5px;
-        }
 
-        .container {
-            padding-bottom: 70px; /* Добавляем отступ внизу страницы чтобы не перекрывалось содержимое */
-            position: relative;
-            z-index: 1;
-        }
+
+
+
+
+
+        
     </style>
 </head>
 
 <body>
-
+    
+     
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
+    
     <div class="user-info" id="userInfo"></div>
-
+     
+     
+    
     <div class="container">
-
+                
         <div class="sections">
             <div class="section">
                 <div class="section__title" style="color: #967e76;">Прибыль за тап</div>
@@ -143,33 +131,15 @@
                 <div class="upgrade__button">Upgrade</div>
             </div>
         </div>
-
+          
+        
     </div>
-
-    <div class="nav-bar">
-        <a href="#" class="nav-button">
-            <img src="img/tap.png" alt="Tap">
-            <span>Tap</span>
-        </a>
-        <a href="mine.html" class="nav-button">
-            <img src="img/mine.png" alt="Mine">
-            <span>Mine</span>
-        </a>
-        <a href="friends.html" class="nav-button">
-            <img src="img/friends.png" alt="Friends">
-            <span>Friends</span>
-        </a>
-        <a href="earn.html" class="nav-button">
-            <img src="img/earn.png" alt="Earn">
-            <span>Earn</span>
-        </a>
-        <a href="airdrop.html" class="nav-button">
-            <img src="img/airdrop.png" alt="Airdrop">
-            <span>Airdrop</span>
-        </a>
-    </div>
-
+    
+    
+    
     <script src="script.js"></script>
+ 
+ 
 
     <script>
         Telegram.WebApp.ready();
@@ -178,9 +148,15 @@
 
         const userInfoDiv = document.getElementById('userInfo');
         userInfoDiv.innerHTML = `
+            
             <center>User: ${user.username}</center>
+           
         `;
 
+         
+
+
+        
         // Получаем изображение
         const image = document.querySelector('.button__img img');
 
@@ -195,12 +171,17 @@
             }, { once: true });
         });
 
+
+        
+    </script>
+    
+    <script>
         document.getElementById('image').addEventListener('click', function(event) {
             var sourceText = document.querySelector('.tap-income').textContent;
-
+            
             var text = document.createElement('div');
             text.className = 'text';
-            text.textContent = '+' + sourceText;
+            text.textContent = '+' + sourceText; 
 
             document.body.appendChild(text);
 
@@ -226,7 +207,7 @@
             }, 950); // удаляем через 1 секунду
         });
     </script>
-
+    
 </body>
 
 </html>
