@@ -13,7 +13,7 @@
         .header-img {
             width: 100%;
             height: 25vh;
-            background: url('hamster-coin.png') no-repeat center center;
+            background: url('/img/hamster-coin.png') no-repeat center center;
             background-size: cover;
         }
         .title {
@@ -101,17 +101,23 @@
             ];
 
             const subscribeLinks = [
-                "https://www.youtube.com/", "https://x.com/", "https://www.instagram.com/", "https://link4.com",
-                "https://link5.com", "https://link6.com", "https://link7.com", "https://link8.com",
-                "https://link9.com", "https://link10.com"
+                "https://www.youtube.com/", "https://x.com/", "https://www.instagram.com/", "https://www.youtube.com/",
+                "https://www.youtube.com/", "https://x.com/", "https://x.com/", "https://www.instagram.com/",
+                "https://www.youtube.com/", "https://www.instagram.com/"
+            ];
+
+            const buttonImages = [
+                "/img/hamster-coin.png", "/img/hamster-coin.png", "/img/hamster-coin.png", "/img/hamster-coin.png",
+                "/img/hamster-coin.png", "/img/hamster-coin.png", "/img/hamster-coin.png", "/img/hamster-coin.png",
+                "/img/hamster-coin.png", "/img/hamster-coin.png"
             ];
 
             for (let i = 0; i < 10; i++) {
                 document.write(`
                     <div class="button" onclick="openModal(${i})">
-                        <img src="hamster-coin${i + 1}.png" alt="button image">
+                        <img src="${buttonImages[i]}" alt="button image">
                         <div class="text">${randomNames[i]}</div>
-                        <img src="hamster-coin.png" alt="coin icon">
+                        <img src="/img/hamster-coin.png" alt="coin icon">
                         <div class="coin-value">10000</div>
                     </div>
                 `);
@@ -125,10 +131,10 @@
             document.write(`
                 <div class="modal" id="modal${i}">
                     <div class="modal-content">
-                        <img src="hamster-coin${i + 1}.png" alt="modal header image">
+                        <img src="${buttonImages[i]}" alt="modal header image">
                         <div class="random-text">Случайный текст ${i + 1}</div>
-                        <button class="subscribe-button" onclick="location.href='${subscribeLinks[i]}'">${subscribeNames[i]}</button>
-                        <img src="hamster-coin.png" alt="coin icon">
+                        <a class="subscribe-button" href="${subscribeLinks[i]}" target="_blank">${subscribeNames[i]}</a>
+                        <img src="/img/hamster-coin.png" alt="coin icon">
                         <div class="coin-value">10000</div>
                         <button class="check-button">Проверить</button>
                     </div>
