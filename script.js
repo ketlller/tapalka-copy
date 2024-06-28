@@ -134,3 +134,14 @@ upgradeButton.addEventListener("click", upgrade);
 // }
 
 // resetLocalStorage();
+
+
+
+
+
+document.querySelectorAll('.nav-button').forEach(button => {
+    button.addEventListener('click', event => {
+        event.preventDefault();
+        window.location.href = button.getAttribute('href');
+    });
+});
