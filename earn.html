@@ -13,7 +13,7 @@
         .header-img {
             width: 100%;
             height: 25vh;
-            background: url('header.jpg') no-repeat center center;
+            background: url('hamster-coin.png') no-repeat center center;
             background-size: cover;
         }
         .title {
@@ -109,9 +109,9 @@
             for (let i = 0; i < 10; i++) {
                 document.write(`
                     <div class="button" onclick="openModal(${i})">
-                        <img src="button${i + 1}.jpg" alt="button image">
+                        <img src="hamster-coin${i + 1}.png" alt="button image">
                         <div class="text">${randomNames[i]}</div>
-                        <img src="coin.png" alt="coin icon">
+                        <img src="hamster-coin.png" alt="coin icon">
                         <div class="coin-value">10000</div>
                     </div>
                 `);
@@ -125,10 +125,10 @@
             document.write(`
                 <div class="modal" id="modal${i}">
                     <div class="modal-content">
-                        <img src="header${i + 1}.jpg" alt="modal header image">
+                        <img src="hamster-coin${i + 1}.png" alt="modal header image">
                         <div class="random-text">Случайный текст ${i + 1}</div>
                         <button class="subscribe-button" onclick="location.href='${subscribeLinks[i]}'">${subscribeNames[i]}</button>
-                        <img src="coin.png" alt="coin icon">
+                        <img src="hamster-coin.png" alt="coin icon">
                         <div class="coin-value">10000</div>
                         <button class="check-button">Проверить</button>
                     </div>
