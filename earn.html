@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заработай больше монет!</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .header-img {
+            width: 100%;
+            height: 25vh;
+            background: url('header.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .title {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button {
+            width: 90%;
+            height: 1cm;
+            margin: 10px 0;
+            background-color: gray;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .button img {
+            height: 100%;
+            border-radius: 10px;
+        }
+        .button .text {
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            width: 80%;
+        }
+        .modal img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .modal .random-text {
+            margin: 10px 0;
+        }
+        .modal .subscribe-button, .modal .check-button {
+            background-color: gray;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-img"></div>
+    <div class="title">Заработай больше монет!</div>
+    <div class="button-container">
+        <!-- Creating 10 buttons with random names and images -->
+        <script>
+            const randomNames = [
+                "Первая кнопка", "Вторая кнопка", "Третья кнопка", "Четвертая кнопка",
+                "Пятая кнопка", "Шестая кнопка", "Седьмая кнопка", "Восьмая кнопка",
+                "Девятая кнопка", "Десятая кнопка"
+            ];
+
+            for (let i = 0; i < 10; i++) {
+                document.write(`
+                    <div class="button" onclick="openModal(${i})">
+                        <img src="button${i + 1}.jpg" alt="button image">
+                        <div class="text">${randomNames[i]}</div>
+                        <img src="coin.png" alt="coin icon">
+                        <div class="coin-value">10000</div>
+                    </div>
+                `);
+            }
+        </script>
+    </div>
+
+    <!-- Modals -->
+    <script>
+        for (let i = 0; i < 10; i++) {
+            document.write(`
+                <div class="modal" id="modal${i}">
+                    <div class="modal-content">
+                        <img src="header${i + 1}.jpg" alt="modal header image">
+                        <div class="random-text">Случайный текст ${i + 1}</div>
+                        <button class="subscribe-button">Подписаться и привязать ссылку ютуба</button>
+                        <img src="coin.png" alt="coin icon">
+                        <div class="coin-value">10000</div>
+                        <button class="check-button">Проверить</button>
+                    </div>
+                </div>
+            `);
+        }
+
+        function openModal(index) {
+            document.getElementById(`modal${index}`).style.display = 'flex';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
