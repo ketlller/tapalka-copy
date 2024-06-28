@@ -13,7 +13,7 @@
         .header-img {
             width: 100%;
             height: 25vh;
-            background: url('/img/hamster-coin.png') no-repeat center center;
+            background: url('img/hamster-coin.png') no-repeat center center;
             background-size: cover;
         }
         .title {
@@ -107,9 +107,9 @@
             ];
 
             const buttonImages = [
-                "/img/hamster-coin.png", "/img/hamster-coin.png", "/img/hamster-coin.png", "/img/hamster-coin.png",
-                "/img/hamster-coin.png", "/img/hamster-coin.png", "/img/hamster-coin.png", "/img/hamster-coin.png",
-                "/img/hamster-coin.png", "/img/hamster-coin.png"
+                "img/hamster-coin.png", "img/hamster-coin.png", "img/hamster-coin.png", "img/hamster-coin.png",
+                "img/hamster-coin.png", "img/hamster-coin.png", "img/hamster-coin.png", "img/hamster-coin.png",
+                "img/hamster-coin.png", "img/hamster-coin.png"
             ];
 
             for (let i = 0; i < 10; i++) {
@@ -117,7 +117,7 @@
                     <div class="button" onclick="openModal(${i})">
                         <img src="${buttonImages[i]}" alt="button image">
                         <div class="text">${randomNames[i]}</div>
-                        <img src="/img/hamster-coin.png" alt="coin icon">
+                        <img src="img/hamster-coin.png" alt="coin icon">
                         <div class="coin-value">10000</div>
                     </div>
                 `);
@@ -134,7 +134,7 @@
                         <img src="${buttonImages[i]}" alt="modal header image">
                         <div class="random-text">Случайный текст ${i + 1}</div>
                         <a class="subscribe-button" href="${subscribeLinks[i]}" target="_blank">${subscribeNames[i]}</a>
-                        <img src="/img/hamster-coin.png" alt="coin icon">
+                        <img src="img/hamster-coin.png" alt="coin icon">
                         <div class="coin-value">10000</div>
                         <button class="check-button">Проверить</button>
                     </div>
