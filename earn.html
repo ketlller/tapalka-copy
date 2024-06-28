@@ -13,7 +13,7 @@
         .header-img {
             width: 100%;
             height: 25vh;
-            background: url('/img/hamster-coin.png') no-repeat center center;
+            background: url('header.jpg') no-repeat center center;
             background-size: cover;
         }
         .title {
@@ -94,12 +94,24 @@
                 "Девятая кнопка", "Десятая кнопка"
             ];
 
+            const subscribeNames = [
+                "Подписка 1", "Подписка 2", "Подписка 3", "Подписка 4",
+                "Подписка 5", "Подписка 6", "Подписка 7", "Подписка 8",
+                "Подписка 9", "Подписка 10"
+            ];
+
+            const subscribeLinks = [
+                "https://link1.com", "https://link2.com", "https://link3.com", "https://link4.com",
+                "https://link5.com", "https://link6.com", "https://link7.com", "https://link8.com",
+                "https://link9.com", "https://link10.com"
+            ];
+
             for (let i = 0; i < 10; i++) {
                 document.write(`
                     <div class="button" onclick="openModal(${i})">
                         <img src="button${i + 1}.jpg" alt="button image">
                         <div class="text">${randomNames[i]}</div>
-                        <img src="/img/hamster-coin.png" alt="coin icon">
+                        <img src="coin.png" alt="coin icon">
                         <div class="coin-value">10000</div>
                     </div>
                 `);
@@ -115,8 +127,8 @@
                     <div class="modal-content">
                         <img src="header${i + 1}.jpg" alt="modal header image">
                         <div class="random-text">Случайный текст ${i + 1}</div>
-                        <button class="subscribe-button">Подписаться на ютуб</button>
-                        <img src="/img/hamster-coin.png" alt="coin icon">
+                        <button class="subscribe-button" onclick="location.href='${subscribeLinks[i]}'">${subscribeNames[i]}</button>
+                        <img src="coin.png" alt="coin icon">
                         <div class="coin-value">10000</div>
                         <button class="check-button">Проверить</button>
                     </div>
